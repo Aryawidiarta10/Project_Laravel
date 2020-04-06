@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pupuk;
 use Illuminate\Http\Request;
 
 class PupukController extends Controller
@@ -14,7 +15,8 @@ class PupukController extends Controller
     public function index()
     {
         $title='Pupuk';
-        return view('admin.Pupuk', compact('title'));
+        $pupuk=Pupuk::paginate(5);
+        return view('admin.Pupuk', compact('title','pupuk'));
     }
 
     /**
@@ -24,7 +26,8 @@ class PupukController extends Controller
      */
     public function create()
     {
-        //
+        $title='Input Pupuk';
+        return view('admin.inputPupuk', compact('title'));
     }
 
     /**
@@ -35,7 +38,17 @@ class PupukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $messages = [
+            'required'=> 'kolom :attribute harus lengkap',
+            'date'    => 'kolom :attribute harus tanggal',
+            'numeric' => 'kolom :attribute harus angka',
+        ];
+        $validasi = $request->validate([
+            'nama_pupuk'=>'required',
+            'keterangan'=>''
+        ],$messages);
+        Pupuk::create($validasi);
+        return redirect('Pupuk')->with('success','data berhasil di update');
     }
 
     /**
@@ -57,7 +70,9 @@ class PupukController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title='Input Pupuk';
+        $pupuk=Pupuk::find($id);
+        return view('admin.inputPupuk', compact('title','pupuk'));
     }
 
     /**
@@ -69,7 +84,17 @@ class PupukController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $messages = [
+            'required'=> 'kolom :attribute harus lengkap',
+            'date'    => 'kolom :attribute harus tanggal',
+            'numeric' => 'kolom :attribute harus angka',
+        ];
+        $validasi = $request->validate([
+            'nama_pupuk'=>'required',
+            'keterangan'=>''
+        ],$messages);
+        Pupuk::whereid_pupuk($id)->update($validasi);
+        return redirect('Pupuk')->with('success','data berhasil di update');
     }
 
     /**
@@ -80,6 +105,7 @@ class PupukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pupuk::whereid_pupuk($id)->delete();
+        return redirect('Pupuk')->with('success','data berhasil di update');
     }
 }

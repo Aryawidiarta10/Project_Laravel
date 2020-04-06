@@ -3,15 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{asset('assets/img/ikon title.png')}}">
     <title>{{(isset($title)?$title:"Dashboard")}}</title>
     <!-- Core CSS - Include with every page -->
-    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/bootstrap/bootstrap.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/pace/pace-theme-big-counter.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/main-style.css')}}" rel="stylesheet" />
     <!-- Page-Level CSS -->
-    <link href="assets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/morris/morris-0.4.3.mincss')}}" rel="stylesheet" />
    </head>
 <body>
     <!--  wrapper -->
@@ -26,8 +27,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/img/sibak.png" alt="" />
+                <a href="{{route('Pupuk.index')}}">
+                    <img src="{{asset('assets/img/sibak.png')}}" alt="" />
                 </a>
             </div>
             <!-- end navbar-header -->
@@ -260,7 +261,7 @@
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-section-inner">
-                                <img src="assets/img/user.jpg" alt="">
+                                <img src="{{asset('assets/img/user.jpg')}}" alt="">
                             </div>
                             <div class="user-info">
                                 <div>Arya <strong>Widiarta</strong></div>
@@ -287,13 +288,13 @@
                         <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Diagram<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html">Flot Charts</a>
+                                <a href="flot.html">Diagram Flot</a>
                             </li>
                             <li>
-                                <a href="morris.html">Morris Charts</a>
+                                <a href="morris.html">Diagram Morris</a>
                             </li>
                         </ul>
                         <!-- second-level-items -->
@@ -305,10 +306,10 @@
                         <a href="tables.html"><i class="fa fa-table fa-fw"></i>Pupuk</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Forms</a>
+                        <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Formulir</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>UI Elements<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Pengaturan<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="panels-wells.html">Panels and Wells</a>
@@ -329,7 +330,7 @@
                         <!-- second-level-items -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i>Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap fa-fw"></i>Uang Khas<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="#">Second Level Item</a>
@@ -359,7 +360,7 @@
                         <!-- second-level-items -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i>Sample Pages<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-files-o fa-fw"></i>Daftar Hadir<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="blank.html">Blank Page</a>
@@ -385,15 +386,15 @@
     <!-- end wrapper -->
 
     <!-- Core Scripts - Include with every page -->
-    <script src="assets/plugins/jquery-1.10.2.js"></script>
-    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="assets/plugins/pace/pace.js"></script>
-    <script src="assets/scripts/siminta.js"></script>
+    <script src="{{asset('assets/plugins/jquery-1.10.2.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+    <script src="{{asset('assets/plugins/pace/pace.js')}}"></script>
+    <script src="{{asset('assets/scripts/siminta.js')}}"></script>
     <!-- Page-Level Plugin Scripts-->
-    <script src="assets/plugins/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/plugins/morris/morris.js"></script>
-    <script src="assets/scripts/dashboard-demo.js"></script>
+    <script src="{{asset('assets/plugins/morris/raphael-2.1.0.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/morris/morris.js')}}"></script>
+    <script src="{{asset('assets/scripts/dashboard-demo.js')}}"></script>
 
 </body>
 @yield('script')
