@@ -9,5 +9,5 @@ class Pupuk extends Model
     //
     protected $table='pupuk';
     protected $primaryKey='id_pupuk';
-    protected $fillable=['nama_pupuk','keterangan'];
+    protected $fillable=['nama_pupuk','jumlah_pupuk','harga_pupuk','keterangan'];
 }

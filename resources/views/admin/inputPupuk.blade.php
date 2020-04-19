@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.adminPupuk')
 @section('page-wrapper')
 <div class="row">
     <!-- Page Header -->
@@ -22,6 +22,16 @@
                                 <label>Nama Pupuk</label>
                                 <input type="text" value="{{(isset($pupuk))?$pupuk->nama_pupuk:old('nama_pupuk')}}" name="nama_pupuk" class="form-control">
                                 @error('nama_pupuk')<small style="color:red">{{$message}}</small>@enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Jumlah Pupuk</label>
+                                <input type="text" value="{{(isset($pupuk))?$pupuk->jumlah_pupuk:old('jumlah_pupuk')}}" name="jumlah_pupuk" class="form-control">
+                                @error('jumlah_pupuk')<small style="color:red">{{$message}}</small>@enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Harga Pupuk</label>
+                                <input type="text" value="{{(isset($pupuk))?$pupuk->harga_pupuk:old('harga_pupuk')}}" name="harga_pupuk" class="form-control">
+                                @error('harga_pupuk')<small style="color:red">{{$message}}</small>@enderror
                             </div>
                             <div class="form-group">
                                 <label>Keterangan</label>

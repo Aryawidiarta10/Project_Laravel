@@ -15,3 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('Pupuk', 'PupukController');
+Route::resource('Dashboard', 'DashboardController');
+Auth::routes();
+
+Route::get('/home', 'PupukController@index')->name('home');

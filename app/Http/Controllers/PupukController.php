@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Pupuk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PupukController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function($request, $next){
+            if(Gate::allows('admin')) return $next($request);
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });
+    }
     /**
      * Display a listing of the resource.
      *
@@ -45,6 +53,8 @@ class PupukController extends Controller
         ];
         $validasi = $request->validate([
             'nama_pupuk'=>'required',
+            'jumlah_pupuk'=>'required',
+            'harga_pupuk'=>'required',
             'keterangan'=>''
         ],$messages);
         Pupuk::create($validasi);
@@ -91,6 +101,8 @@ class PupukController extends Controller
         ];
         $validasi = $request->validate([
             'nama_pupuk'=>'required',
+            'jumlah_pupuk'=>'required',
+            'harga_pupuk'=>'required',
             'keterangan'=>''
         ],$messages);
         Pupuk::whereid_pupuk($id)->update($validasi);

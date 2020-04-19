@@ -91,7 +91,7 @@
                         </div>
                         <!--end search section-->
                     </li>
-                    <li class="selected">
+                    <li>
                         <a href="{{route('Dashboard.index')}}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
                     <li>
@@ -118,7 +118,7 @@
                         </ul>
                         <!-- second-level-items -->
                     </li>
-                    <li>
+                    <li class="selected">
                     <a href="#"><i class="fa fa-table fa-fw"></i>Manajemen Pupuk<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -141,7 +141,7 @@
                             </li>
                         </ul>
                         <!-- second-level-items -->
-                    </li>     
+                    </li>        
                 </ul>
                 <!-- end side-menu -->
             </div>
